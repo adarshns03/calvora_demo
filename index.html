@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calvora — Homestay, Retreat & Sanctuary</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #ffffff;
+            color: #171a18;
+            font-family: "DM Sans", sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1200px, 90%);
+            margin: auto;
+        }
+
+        .serif {
+            font-family: "Playfair Display", serif;
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.65;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero-wrapper {
+            padding: 22px;
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(181, 138, 59, 0.08),
+                    transparent 50%
+                ),
+                #f7f7f4;
+        }
+
+        .hero {
+            position: relative;
+            min-height: calc(100vh - 44px);
+
+            border-radius: 28px;
+            overflow: hidden;
+
+            background-image:
+                linear-gradient(
+                    to bottom,
+                    rgba(255,255,255,0.04),
+                    rgba(255,255,255,0.02) 40%,
+                    rgba(0,0,0,0.50)
+                ),
+                url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2200&q=90");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(0,0,0,0.05) 0%,
+                    transparent 35%,
+                    rgba(0,0,0,0.48) 100%
+                );
+
+            pointer-events: none;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+
+            height: 90px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 38px;
+
+            z-index: 10;
+
+            color: white;
+        }
+
+        .menu-button {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            cursor: pointer;
+        }
+
+        .menu-icon {
+            width: 19px;
+            height: 14px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-icon span {
+            width: 100%;
+            height: 1.5px;
+            background: white;
+            display: block;
+        }
+
+        .logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            font-family: "Playfair Display", serif;
+            font-size: 25px;
+            letter-spacing: -0.5px;
+        }
+
+        .book-link {
+            font-size: 14px;
+            font-weight: 400;
+
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .book-link::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+            width: 100%;
+            height: 1px;
+
+            background: white;
+
+            transform: scaleX(0);
+            transform-origin: right;
+
+            transition: transform 0.3s ease;
+        }
+
+        .book-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+
+        /* =========================
+           HERO CONTENT
+        ========================= */
+
+/* HERO CONTENT PLACEMENT */
+
+.hero-content {
+    position: absolute;
+    z-index: 3;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -42%);
+
+    width: min(850px, 90%);
+
+    text-align: center;
+
+    color: white;
+}
+
+.hero-title {
+    margin: 18px 0 20px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(52px, 7vw, 105px);
+    font-weight: 400;
+
+    line-height: 0.94;
+    letter-spacing: -3px;
+}
+
+.hero-description {
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    opacity: 0.9;
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 26px;
+
+    padding: 14px 30px;
+
+    border: 1px solid rgba(255,255,255,.8);
+    border-radius: 100px;
+}
+
+        .hero-button:hover {
+            background: white;
+            color: #18231f;
+        }
+
+        .scroll-indicator {
+            margin-top: 32px;
+
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            opacity: 0.65;
+        }
+
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .intro {
+            padding: 150px 0;
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .intro .eyebrow {
+            color: #a67c35;
+        }
+
+        .intro h2 {
+            max-width: 850px;
+            margin: 25px auto;
+
+            font-family: "Playfair Display", serif;
+            font-size: clamp(40px, 5vw, 72px);
+            font-weight: 400;
+            line-height: 1.05;
+
+            color: #171a18;
+        }
+
+        .intro p {
+            max-width: 620px;
+            margin: 30px auto;
+
+            font-size: 16px;
+            line-height: 1.8;
+
+            color: #777771;
+        }
+
+
+        /* =========================
+           FEATURE IMAGE
+        ========================= */
+
+        .feature-image {
+            width: 90%;
+            max-width: 1400px;
+
+            height: 650px;
+
+            margin: auto;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.05),
+                    rgba(0,0,0,0.25)
+                ),
+                url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=2200&q=90");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        /* =========================
+           STAYS
+        ========================= */
+
+        .stays {
+            padding: 150px 0;
+            background: #ffffff;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+
+            margin-bottom: 60px;
+        }
+
+        .section-heading .eyebrow {
+            color: #a67c35;
+        }
+
+        .section-heading h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(40px, 5vw, 65px);
+            font-weight: 400;
+
+            color: #171a18;
+        }
+
+        .section-heading p {
+            max-width: 330px;
+
+            font-size: 14px;
+            line-height: 1.7;
+
+            color: #777771;
+        }
+
+        .rooms {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .room {
+            cursor: pointer;
+        }
+
+        .room-image {
+            height: 500px;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            background-size: cover;
+            background-position: center;
+
+            transition: transform 0.6s ease;
+        }
+
+        .room:hover .room-image {
+            transform: scale(0.98);
+        }
+
+        .room:nth-child(1) .room-image {
+            background-image:
+                url("https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1400&q=85");
+        }
+
+        .room:nth-child(2) .room-image {
+            background-image:
+                url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85");
+        }
+
+        .room-info {
+            display: flex;
+            justify-content: space-between;
+
+            padding: 20px 5px;
+        }
+
+        .room-info h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 26px;
+            font-weight: 400;
+
+            color: #171a18;
+        }
+
+        .room-info span {
+            font-size: 12px;
+            color: #777771;
+        }
+
+        .room-description {
+            padding: 0 5px 15px;
+
+            font-size: 13px;
+            line-height: 1.7;
+
+            color: #777771;
+
+            max-width: 520px;
+        }
+
+
+        /* =========================
+           EXPERIENCES
+        ========================= */
+
+        .experiences {
+            padding: 140px 0;
+
+            background: #f7f7f4;
+            color: #171a18;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 18px;
+
+            margin-top: 70px;
+        }
+
+        .experience {
+            min-height: 400px;
+
+            padding: 40px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 18px;
+        }
+
+        .experience::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background-size: cover;
+            background-position: center;
+
+            transition: transform 0.7s ease;
+
+            z-index: 0;
+        }
+
+        .experience:hover::before {
+            transform: scale(1.06);
+        }
+
+        .experience:nth-child(1)::before {
+            background-image:
+                linear-gradient(
+                    rgba(0,0,0,.10),
+                    rgba(0,0,0,.55)
+                ),
+                url("https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1000&q=85");
+        }
+
+        .experience:nth-child(2)::before {
+            background-image:
+                linear-gradient(
+                    rgba(0,0,0,.10),
+                    rgba(0,0,0,.55)
+                ),
+                url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=85");
+        }
+
+        .experience:nth-child(3)::before {
+            background-image:
+                linear-gradient(
+                    rgba(0,0,0,.10),
+                    rgba(0,0,0,.55)
+                ),
+                url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1000&q=85");
+        }
+
+        .experience-content {
+            position: relative;
+            z-index: 2;
+
+            color: white;
+        }
+
+        .experience h3 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 32px;
+            font-weight: 400;
+
+            margin-bottom: 10px;
+        }
+
+        .experience p {
+            font-size: 13px;
+            line-height: 1.6;
+
+            opacity: 0.8;
+        }
+
+
+        /* =========================
+           GALLERY
+        ========================= */
+
+        .gallery {
+            padding: 150px 0;
+            background: #ffffff;
+        }
+
+        .gallery-grid {
+            display: grid;
+
+            grid-template-columns: 1.2fr .8fr .8fr;
+            grid-template-rows: 280px 280px;
+
+            gap: 15px;
+
+            margin-top: 70px;
+        }
+
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gallery-item:nth-child(1) {
+            grid-row: span 2;
+
+            background-image:
+                url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=85");
+        }
+
+        .gallery-item:nth-child(2) {
+            background-image:
+                url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=85");
+        }
+
+        .gallery-item:nth-child(3) {
+            background-image:
+                url("https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1000&q=85");
+        }
+
+        .gallery-item:nth-child(4) {
+            background-image:
+                url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85");
+        }
+
+        .gallery-item:nth-child(5) {
+            background-image:
+                url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=85");
+        }
+
+
+        /* =========================
+           BOOKING
+        ========================= */
+
+        .booking {
+            width: 90%;
+            max-width: 1400px;
+
+            min-height: 600px;
+
+            margin: 0 auto 100px;
+
+            border-radius: 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    rgba(20,30,25,.25),
+                    rgba(0,0,0,.60)
+                ),
+                url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2200&q=90");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .booking-content {
+            position: relative;
+            z-index: 2;
+
+            width: min(850px, 90%);
+
+            color: white;
+        }
+
+        .booking h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(50px, 7vw, 90px);
+            font-weight: 400;
+
+            line-height: 1;
+        }
+
+        .booking p {
+            margin: 25px auto;
+
+            max-width: 500px;
+
+            line-height: 1.7;
+
+            opacity: .8;
+        }
+
+        .booking-form {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 10px;
+
+            margin-top: 25px;
+        }
+
+        .booking-form input,
+        .booking-form select {
+            height: 48px;
+
+            border: 0;
+            border-radius: 8px;
+
+            padding: 0 13px;
+
+            background: rgba(255,255,255,.95);
+
+            color: #18231f;
+
+            outline: none;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 15px 30px;
+
+            margin-top: 15px;
+
+            background: #ffffff;
+            color: #18231f;
+
+            border-radius: 100px;
+
+            font-size: 13px;
+
+            transition: all .3s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            background: #f3eee3;
+        }
+
+        .booking-submit {
+            grid-column: 1 / -1;
+
+            justify-self: center;
+
+            border: 0;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 70px 0 40px;
+
+            background: #ffffff;
+
+            color: #171a18;
+
+            border-top: 1px solid rgba(23,26,24,.10);
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-family: "Playfair Display", serif;
+            font-size: 35px;
+        }
+
+        footer h4 {
+            margin-bottom: 20px;
+
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            color: #a67c35;
+        }
+
+        footer a {
+            display: block;
+
+            font-size: 13px;
+
+            color: #555852;
+
+            margin-bottom: 12px;
+
+            transition: .2s ease;
+        }
+
+        footer a:hover {
+            color: #a67c35;
+        }
+
+        .copyright {
+            margin-top: 70px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid rgba(23,26,24,.10);
+
+            font-size: 11px;
+
+            color: #888982;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .hero-wrapper {
+                padding: 10px;
+            }
+
+            .hero {
+                min-height: calc(100vh - 20px);
+                border-radius: 18px;
+            }
+
+.nav {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 88px;
+
+    padding: 0 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 10;
+}
+
+.logo {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+    letter-spacing: -0.5px;
+}
+
+            .book-link {
+                font-size: 12px;
+            }
+
+            .hero-content {
+                bottom: 70px;
+            }
+
+            .hero-title {
+                font-size: 52px;
+                letter-spacing: -2px;
+            }
+
+            .intro,
+            .stays,
+            .gallery {
+                padding: 100px 0;
+            }
+
+            .feature-image {
+                width: 94%;
+                height: 450px;
+                border-radius: 18px;
+            }
+
+            .section-heading {
+                display: block;
+            }
+
+            .section-heading p {
+                margin-top: 20px;
+            }
+
+.rooms {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 40px;
+}
+
+.room-image {
+    width: 100%;
+    height: 520px;
+
+    border-radius: 18px;
+}
+
+.room-info {
+    padding: 20px 4px 8px;
+
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 250px 250px 250px;
+            }
+
+            .gallery-item:nth-child(1) {
+                grid-row: span 2;
+            }
+
+            .booking-form {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-submit {
+                grid-column: auto;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .hero-title {
+                font-size: 43px;
+            }
+
+            .hero-description {
+                font-size: 13px;
+            }
+
+            .gallery-grid {
+                display: grid;
+
+                grid-template-columns: 1fr;
+
+                grid-template-rows:
+                    repeat(5, 300px);
+            }
+
+            .gallery-item:nth-child(1) {
+                grid-row: auto;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .copyright {
+                margin-top: 40px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =====================================
+     HERO
+===================================== -->
+
+<section class="hero-wrapper">
+
+    <div class="hero">
+
+        <nav class="nav">
+
+            <div class="menu-button">
+
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </div>
+
+
+            <div class="logo">
+                Calvora
+            </div>
+
+
+            <a href="#booking" class="book-link">
+                Book Your Stay
+            </a>
+
+        </nav>
+
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Homestay · Retreat · Sanctuary
+            </div>
+
+
+            <h1 class="hero-title">
+
+                Calvora
+                <br>
+
+                Where The Aura
+                <br>
+
+                Meets the Calvory Hills
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                A peaceful homestay in the Calvary Hills,
+                surrounded by misty mountains, fresh air
+                and the quiet beauty of nature.
+
+            </p>
+
+            <div class="scroll-indicator">
+                Discover Calvora ↓
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     INTRO
+===================================== -->
+
+<section class="intro">
+
+    <div class="container">
+
+        <div class="eyebrow">
+            Welcome to Calvora
+        </div>
+
+
+        <h2>
+
+            Step in.
+            Breathe deep.
+            Belong.
+
+        </h2>
+
+
+        <p>
+
+            Calvora is more than a place to stay.
+            It is a quiet escape into the hills — a warm,
+            comfortable home where you can slow down,
+            reconnect with nature and create memories together.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     FEATURE IMAGE
+===================================== -->
+
+<div class="feature-image"></div>
+
+
+
+<!-- =====================================
+     STAYS
+===================================== -->
+
+<section class="stays" id="stay">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="eyebrow">
+                    Stay at Calvora
+                </div>
+
+
+                <h2>
+
+                    Your home
+                    <br>
+                    in the hills.
+
+                </h2>
+
+            </div>
+
+
+            <p>
+
+                Thoughtfully arranged spaces for couples,
+                families and friends looking for a peaceful
+                stay surrounded by the hills.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="rooms">
+
+
+            <div class="room">
+
+                <div class="room-image"></div>
+
+
+                <div class="room-info">
+
+                    <h3>
+                        Mountain View Room
+                    </h3>
+
+                    <span>
+                        2 Guests
+                    </span>
+
+                </div>
+
+
+                <p class="room-description">
+
+                    A comfortable private room with a peaceful
+                    atmosphere and beautiful views of the
+                    surrounding hills.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="room">
+
+                <div class="room-image"></div>
+
+
+                <div class="room-info">
+
+                    <h3>
+                        Calvary Family Suite
+                    </h3>
+
+                    <span>
+                        4–6 Guests
+                    </span>
+
+                </div>
+
+
+                <p class="room-description">
+
+                    A spacious stay for families and groups,
+                    designed for relaxed evenings and
+                    memorable mornings.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     EXPERIENCES
+===================================== -->
+
+<section class="experiences" id="experience">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="eyebrow">
+                    Around Calvora
+                </div>
+
+
+                <h2>
+
+                    Experience
+                    <br>
+                    the hills.
+
+                </h2>
+
+            </div>
+
+
+            <p>
+
+                Come for the stay.
+                Explore the landscape.
+                Discover the quiet places around Calvary Mount.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="experience-grid">
+
+
+            <div class="experience">
+
+                <div class="experience-content">
+
+                    <h3>
+                        Mountain Walks
+                    </h3>
+
+                    <p>
+
+                        Explore peaceful trails and viewpoints
+                        surrounded by the hills.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="experience">
+
+                <div class="experience-content">
+
+                    <h3>
+                        Misty Mornings
+                    </h3>
+
+                    <p>
+
+                        Wake up to cool mountain air,
+                        soft mist and slow mornings.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="experience">
+
+                <div class="experience-content">
+
+                    <h3>
+                        Golden Evenings
+                    </h3>
+
+                    <p>
+
+                        End the day with mountain views,
+                        warm conversations and quiet sunsets.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     GALLERY
+===================================== -->
+
+<section class="gallery" id="gallery">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="eyebrow">
+                    The Calvora Journal
+                </div>
+
+
+                <h2>
+
+                    A glimpse
+                    <br>
+                    of the stay.
+
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item"></div>
+
+            <div class="gallery-item"></div>
+
+            <div class="gallery-item"></div>
+
+            <div class="gallery-item"></div>
+
+            <div class="gallery-item"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     BOOKING
+===================================== -->
+
+<section class="booking" id="booking">
+
+    <div class="booking-content">
+
+        <div class="eyebrow">
+            Plan your stay at Calvora
+        </div>
+
+
+        <h2>
+
+            Come find
+            <br>
+            your quiet.
+
+        </h2>
+
+
+        <p>
+
+            Choose your dates, tell us how many guests
+            are joining, and send us a booking request.
+
+        </p>
+
+
+        <form class="booking-form">
+
+            <input
+                type="date"
+                aria-label="Check in"
+                required
+            >
+
+
+            <input
+                type="date"
+                aria-label="Check out"
+                required
+            >
+
+
+            <select aria-label="Guests">
+
+                <option>
+                    2 Guests
+                </option>
+
+                <option>
+                    3 Guests
+                </option>
+
+                <option>
+                    4 Guests
+                </option>
+
+                <option>
+                    5 Guests
+                </option>
+
+                <option>
+                    6+ Guests
+                </option>
+
+            </select>
+
+
+            <a
+                href="#"
+                class="button booking-submit"
+            >
+                Request Booking
+            </a>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <div class="footer-logo">
+                    Calvora
+                </div>
+
+
+                <p
+                    style="
+                        margin-top:15px;
+                        max-width:280px;
+                        font-size:13px;
+                        line-height:1.7;
+                        color:#777771;
+                    "
+                >
+
+                    Where Aura Meets The Calvary Hills.
+
+                    <br>
+
+                    Homestay · Retreat · Sanctuary
+
+                </p>
+
+            </div>
+
+
+
+            <div>
+
+                <h4>
+                    Explore
+                </h4>
+
+                <a href="#stay">
+                    Stay
+                </a>
+
+                <a href="#experience">
+                    Experiences
+                </a>
+
+                <a href="#gallery">
+                    Gallery
+                </a>
+
+            </div>
+
+
+
+            <div>
+
+                <h4>
+                    Visit
+                </h4>
+
+                <a href="#">
+                    Calvary Mount
+                </a>
+
+                <a href="#">
+                    Directions
+                </a>
+
+                <a href="#">
+                    Contact
+                </a>
+
+            </div>
+
+
+
+            <div>
+
+                <h4>
+                    Connect
+                </h4>
+
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    WhatsApp
+                </a>
+
+                <a href="#">
+                    Email
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="copyright">
+
+            © 2026 Calvora. All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
